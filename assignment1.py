@@ -79,10 +79,105 @@ while True:
     lines.append(line)
 for line in lines:
     print(line)
-'''
+
 #15 program that reads data from a CSV file and prints it to the console
 import csv
-with open("data.csv", newline='') as csvfile:
-    csv_reader = csv.reader(csvfile)
+file_path = input("Enter the CSV file path: ")
+with open(file_path, mode='r') as file:
+    csv_reader = csv.reader(file)
     for row in csv_reader:
-        print(", ".join(row))
+        print(row)
+
+#16 program in Python that counts the frequency of each character in a string
+user_input = input("Enter a string: ")
+frequency = {}
+for char in string:
+    if char in frequency:
+        frequency[char] += 1
+    else:
+        frequency[char] = 1
+print(frequency)
+
+#17 program in Python that converts a given string to title case
+user_input = input("Enter a string: ")
+print(string.title())
+
+#18 program that checks if two strings are anagrams of each other
+str1 = input("Enter first string: ")
+str2 = input("Enter second string: ")
+if sorted(str1) == sorted(str2):
+    print("The strings are anagrams.")
+else:
+    print("The strings are not anagrams.")
+
+#19 program that removes all punctuation from a given string
+import string
+user_input = input("Enter a string: ")
+for punctuation in string.punctuation:
+    user_input = user_input.replace(punctuation, "")
+print("String without punctuation:", user_input)
+
+#20 program that takes a list of numbers and returns their sum
+numbers = list(map(int, input("Enter a list of numbers separated by spaces: ").split()))
+print("Sum of the list is:", sum(numbers))
+
+#21 program that counts the occurrences of a specific element in a list
+lst = list(map(int, input("Enter a list of numbers separated by spaces: ").split()))
+element = int(input("Enter the element to count: "))
+print(f"{element} occurs {lst.count(element)} times.")
+
+#22 program that returns the minimum and maximum values in a list of numbers
+lst = list(map(int, input("Enter a list of numbers separated by spaces: ").split()))
+minimum, maximum = min(lst), max(lst)
+print(f"Minimum value is {minimum}, Maximum value is {maximum}.")
+
+#23 program that converts temperature from Celsius to Fahrenheit and vice versa based on user input
+f_to_c=1
+c_to_f=2
+choice=int(input("enter 1 for ^f to ^c conversion or enter 2 for ^c to ^f conversion:"))
+if choice==1:
+  f=float(input('Enter temperature in Fahrenheit:'))
+  con1=(f-32)/1.8
+  print("The temperature is",con1,"degree Celsius")
+elif choice==2:
+  c=float(input('Enter temperature in Celsius:'))
+  con2=(c*1.8)+32
+  print("The temperature is",con2,"degree Fahrenheit")
+
+#24 program that acts as a simple calculator
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+operator = input("Enter an operator (+, -, *, /): ")
+if operator == '+':
+    result = num1 + num2
+elif operator == '-':
+    result = num1 - num2
+elif operator == '*':
+    result = num1 * num2
+elif operator == '/':
+    result = num1 / num2
+else:
+    result = "Invalid operator"
+print("The result is: ", result)
+
+#25 program that copies the contents of one text file to another
+src = input("Enter the source file path: ")
+dest = input("Enter the destination file path: ")
+with open(src, "r") as source_file:
+    content = source_file.read()
+with open(dest, "w") as destination_file:
+    destination_file.write(content)
+
+#26 program that checks if a string starts with a given prefix or ends with a given suffix
+string = input("Enter a string: ")
+prefix = input("Enter the prefix to check: ")
+suffix = input("Enter the suffix to check: ")
+starts_with = string.startswith(prefix)
+ends_with = string.endswith(suffix)
+print(f"String starts with {prefix}: {starts_with}")
+print(f"String ends with {suffix}: {ends_with}")
+
+#27 program that converts a string into a list of its characters
+user_input = input("Enter a string: ")
+print(list(string))
+'''
